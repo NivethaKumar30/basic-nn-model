@@ -14,7 +14,8 @@ First import the libraries which we will going to use and Import the dataset and
 
 ## Neural Network Model
 
-Include the neural network model diagram.
+![image](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/79f70648-c996-4ee8-bf3f-53b4f18bdfe0)
+
 
 ## DESIGN STEPS
 
