@@ -57,14 +57,14 @@ from google.auth import default
 auth.authenticate_user()
 creds, _ = default()
 gc = gspread.authorize(creds)
-worksheet = gc.open('MyMLData').sheet1
+worksheet = gc.open('data').sheet1
 data = worksheet.get_all_values()
 dataset1 = pd.DataFrame(data[1:], columns=data[0])
-dataset1 = dataset1.astype({'Input':'float'})
-dataset1 = dataset1.astype({'Output':'float'})
+dataset1 = dataset1.astype({'input':'float'})
+dataset1 = dataset1.astype({'output':'float'})
 dataset1.head()
-X = dataset1[['Input']].values
-y = dataset1[['Output']].values
+X = dataset1[['input']].values
+y = dataset1[['output']].values
 X
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.33,random_state = 33)
 Scaler = MinMaxScaler()
