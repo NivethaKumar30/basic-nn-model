@@ -97,7 +97,7 @@ ai_brain = Sequential([
     Dense(1)
 ])
 ai_brain.compile(optimizer = 'rmsprop', loss = 'mse')
-ai_brain.fit(x_train1,y_train,epochs = 1000)
+ai_brain.fit(x_train1,y_train,epochs  = 2000)
 ```
 Loss Calculation:
 ```
