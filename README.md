@@ -50,46 +50,70 @@ Evaluate the model with the testing data.
 ## PROGRAM
 ### Name:NIVETHA
 ### Register Number:212222230102
+
+Dependencies:
 ```
 import pandas as pd
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dense,Dropout
+```
+
+Data From Sheets:
+```
 from google.colab import auth
 import gspread
 from google.auth import default
+import pandas as pd
 auth.authenticate_user()
 creds, _ = default()
 gc = gspread.authorize(creds)
-worksheet = gc.open('data').sheet1
-data = worksheet.get_all_values()
-dataset1 = pd.DataFrame(data[1:], columns=data[0])
-dataset1 = dataset1.astype({'input':'float'})
-dataset1 = dataset1.astype({'output':'float'})
-dataset1.head()
-X = dataset1[['input']].values
-y = dataset1[['output']].values
-X
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.33,random_state = 33)
-Scaler = MinMaxScaler()
-Scaler.fit(X_train)
-X_train1 = Scaler.transform(X_train)
+worksheet = gc.open('DATA').sheet1
+rows = worksheet.get_all_values()
+df = pd.DataFrame(rows[1:], columns=rows[0])
+```
+Data Visualization:
+```
+df = df.astype({'INPUT':'float'})
+df = df.astype({'OUTPUT':'float'})
+df
+x=df[['INPUT']].values
+y=df[['OUTPUT']].values
+```
+Data split and Preprocessing:
+```
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.33,random_state=33)
+scaler=MinMaxScaler()
+scaler.fit(x_train)
+x_train1=scaler.transform(x_train)
+```
+Regressive Model:
+```
 ai_brain = Sequential([
     Dense(6,activation = 'relu'),
     Dense(6,activation = 'relu'),
     Dense(1)
 ])
 ai_brain.compile(optimizer = 'rmsprop', loss = 'mse')
-ai_brain.fit(X_train1,y_train,epochs = 2000)
+ai_brain.fit(x_train1,y_train,epochs = 1000)
+```
+Loss Calculation:
+```
 loss_df = pd.DataFrame(ai_brain.history.history)
 loss_df.plot()
-X_test1 = Scaler.transform(X_test)
-ai_brain.evaluate(X_test1,y_test)
-X_n1 = [[30]]
-X_n1_1 = Scaler.transform(X_n1)
-ai_brain.predict(X_n1_1)
-
+```
+Evaluate the model:
+```
+x_test1 = scaler.transform(x_test)
+ai_brain.evaluate(x_test1,y_test)
+```
+Prediction:
+```
+x_n1 = [[5]]
+x_n1_1 = scaler.transform(x_n1)
+ai_brain.predict(x_n1_1)
 ```
 ## Dataset Information
 
