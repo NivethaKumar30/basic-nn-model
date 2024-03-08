@@ -70,17 +70,17 @@ import pandas as pd
 auth.authenticate_user()
 creds, _ = default()
 gc = gspread.authorize(creds)
-worksheet = gc.open('DATA').sheet1
+worksheet = gc.open('data').sheet1
 rows = worksheet.get_all_values()
 df = pd.DataFrame(rows[1:], columns=rows[0])
 ```
 Data Visualization:
 ```
-df = df.astype({'INPUT':'float'})
-df = df.astype({'OUTPUT':'float'})
+df = df.astype({'input':'float'})
+df = df.astype({'output':'float'})
 df
-x=df[['INPUT']].values
-y=df[['OUTPUT']].values
+x=df[['input']].values
+y=df[['output']].values
 ```
 Data split and Preprocessing:
 ```
