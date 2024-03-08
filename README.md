@@ -117,22 +117,30 @@ ai_brain.predict(x_n1_1)
 ```
 ## Dataset Information
 
-Include screenshot of the dataset
+![Screenshot 2024-03-08 232910](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/e01a3186-57bb-4635-866f-2f5b70b0eef0)
+
 
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
 
-Include your plot here
+![Screenshot 2024-03-08 232321](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/1145c902-a25f-4e97-bb4a-9f530f88bbdf)
+
+Training
+
+![Screenshot 2024-03-08 232643](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/a94c472b-d09d-4490-9ec1-2ec2e20b3249)
+
 
 ### Test Data Root Mean Squared Error
 
-Find the test data root mean squared error
+![Screenshot 2024-03-08 232540](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/66c471eb-38ca-41ff-b684-087b63895d6f)
+
 
 ### New Sample Data Prediction
 
-Include your sample input and output here
+![Screenshot 2024-03-08 232556](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/35477db7-24a2-46ee-8e8e-c125f88d36cd)
+
 
 ## RESULT
 
-Include your result here
+A neural network regression model for the given dataset has been developed Sucessfully.
