@@ -10,7 +10,7 @@ This dataset presents a captivating challenge due to the intricate relationship 
 
 ## Neural Network Model
 
-![Screenshot 2024-04-03 105121](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/9a6c8ae6-bf22-4155-bfb6-350d9223381f)
+![Screenshot 2024-05-18 012051](https://github.com/NivethaKumar30/basic-nn-model/assets/119559844/3a9e8ba3-daa2-4432-86d3-78d36ce1db8b)
 
 
 ## DESIGN STEPS
